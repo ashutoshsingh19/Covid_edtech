@@ -1,7 +1,7 @@
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
-import dash_dangerously_set_inner_html
+
 import pandas as pd
 import plotly.graph_objects as go
 
