@@ -1,3 +1,14 @@
+import logging
+
+# ===== START LOGGER =====
+logger = logging.getLogger(__name__)
+root_logger = logging.getLogger()
+root_logger.setLevel(logging.INFO)
+sh = logging.StreamHandler()
+formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+sh.setFormatter(formatter)
+root_logger.addHandler(sh)
+
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
@@ -418,4 +429,4 @@ def display_hover_data(hoverData, selected_dropdown1, val):
 
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=False)
