@@ -1,7 +1,7 @@
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
-
+import flask
 import pandas as pd
 import plotly.graph_objects as go
 
@@ -86,7 +86,9 @@ dict_main = {'Coursera': cou_n,
              'Zoom': zoo_n,
              'TED Talks': ted_n}
 
-app = dash.Dash(__name__)
+
+server = flask.Flask(__name__)
+app = dash.Dash(__name__, server=server)
 
 data = list(dict_main.keys())  # keys for the dataset values
 channels = dict_main[data[0]]  # the_data_sets
